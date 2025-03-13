@@ -1,5 +1,8 @@
 const container = document.querySelector(".container");
 const btn = document.querySelector(".setSize");
+const randomColor = function(){
+    return '#' + Math.floor(Math.random()*1677215).toString(16).padStart(6, '0')
+}
 let gridPixels = 0;
 btn.addEventListener("click", () => {
     let pixel = prompt("How many rows and columns do you want on the grid?");
@@ -16,10 +19,15 @@ btn.addEventListener("click", () => {
                 let colorDiv = document.createElement("div");
                 colorDiv.classList.add("colorDiv");
                 colorDiv.addEventListener("mouseenter", () => {
-                    colorDiv.classList.add("selected")
+                    colorDiv.style.backgroundColor = randomColor;
+                    let opacity = 0%;
+                    if (opacity != 100%){
+                        opacity += 10%;
+                    }
+                    colorDiv.style.opacity = opacity
                 })
                 colorDiv.addEventListener("mouseleave", () => {
-                    colorDiv.classList.remove("selected")
+                    colorDiv.style.backgroundColor = "white";
                 })
                 rowContainer.appendChild(colorDiv);
             }
