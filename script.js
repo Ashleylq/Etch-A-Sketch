@@ -19,7 +19,7 @@ btn.addEventListener("click", () => {
                 let colorDiv = document.createElement("div");
                 colorDiv.classList.add("colorDiv");
                 let opacity = 0;
-                colorDiv.addEventListener("click", () => {
+                colorDiv.addEventListener("mouseover", () => {
                     colorDiv.style.backgroundColor = randomColor();
                     if (opacity != 1){
                         opacity += 0.1;
