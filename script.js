@@ -18,11 +18,11 @@ btn.addEventListener("click", () => {
             for (let i = 1; i <= gridPixels; i++){
                 let colorDiv = document.createElement("div");
                 colorDiv.classList.add("colorDiv");
-                colorDiv.addEventListener("mouseenter", () => {
-                    colorDiv.style.backgroundColor = randomColor;
-                    let opacity = 0%;
-                    if (opacity != 100%){
-                        opacity += 10%;
+                let opacity = 0;
+                colorDiv.addEventListener("click", () => {
+                    colorDiv.style.backgroundColor = randomColor();
+                    if (opacity != 1){
+                        opacity += 0.1;
                     }
                     colorDiv.style.opacity = opacity
                 })
